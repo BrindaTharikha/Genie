@@ -1,0 +1,19 @@
+{
+  "name": "genie-shared",
+  "version": "1.0.0",
+  "description": "Shared utilities and types for Genie food expiry tracker",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "lint": "eslint .",
+    "clean": "rm -rf node_modules"
+  },
+  "dependencies": {
+    "date-fns": "^2.30.0",
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "jest": "^29.6.1",
+    "eslint": "^8.45.0"
+  }
+}

@@ -1,0 +1,149 @@
+/* Enhanced form styling */
+.form-actions {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+  flex-wrap: wrap;
+}
+
+.estimate-button {
+  background: linear-gradient(45deg, #f59e0b, #d97706);
+  color: white;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 140px;
+  justify-content: center;
+}
+
+.estimate-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
+}
+
+.estimate-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Success message styling */
+.success-message {
+  background: #f0fdf4 !important;
+  color: #16a34a !important;
+  border: 1px solid #bbf7d0 !important;
+}
+
+/* FDA badge for items */
+.fda-badge {
+  background: linear-gradient(45deg, #3b82f6, #1d4ed8);
+  color: white !important;
+  font-size: 0.8rem !important;
+  padding: 4px 8px !important;
+  border-radius: 12px !important;
+  display: inline-block !important;
+  margin-top: 8px !important;
+  font-weight: bold !important;
+}
+
+/* Working feature cards */
+.feature-card.working {
+  border: 2px solid rgba(34, 197, 94, 0.3);
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.05));
+}
+
+.feature-card.working h3 {
+  color: #16a34a;
+}
+
+.feature-button {
+  background: linear-gradient(45deg, #22c55e, #16a34a);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.feature-button:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+}
+
+/* Improved item cards with better status indicators */
+.item-card.status-fresh {
+  border-left: 4px solid #22c55e;
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.1), rgba(22, 163, 74, 0.05));
+}
+
+.item-card.status-warning {
+  border-left: 4px solid #f59e0b;
+  background: linear-gradient(135deg, rgba(245, 158, 11, 0.1), rgba(217, 119, 6, 0.05));
+}
+
+.item-card.status-critical {
+  border-left: 4px solid #f97316;
+  background: linear-gradient(135deg, rgba(249, 115, 22, 0.1), rgba(234, 88, 12, 0.05));
+}
+
+.item-card.status-expired {
+  border-left: 4px solid #ef4444;
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(220, 38, 38, 0.05));
+}
+
+/* Enhanced form row for better mobile experience */
+@media (max-width: 768px) {
+  .form-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .estimate-button,
+  .add-item-form button[type="submit"] {
+    width: 100%;
+    min-width: auto;
+  }
+}
+
+/* Tooltip for FDA estimation */
+.estimate-button[title] {
+  position: relative;
+}
+
+.estimate-button[title]:hover::after {
+  content: attr(title);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  z-index: 1000;
+  margin-bottom: 5px;
+}
+
+/* Enhanced loading states */
+.estimate-button:disabled {
+  background: linear-gradient(45deg, #9ca3af, #6b7280);
+}
+
+/* Better visual feedback for form interactions */
+.add-item-form input:focus,
+.add-item-form select:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+  border-color: #3b82f6;
+}

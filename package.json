@@ -1,0 +1,40 @@
+{
+  "name": "genie-food-expiry-tracker",
+  "version": "1.0.0",
+  "description": "Mobile and web app for tracking food expiry dates with AI-powered features",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server",
+    "mobile",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run server:dev\" \"npm run client:dev\"",
+    "server:dev": "npm run dev --workspace=server",
+    "client:dev": "npm run dev --workspace=client",
+    "mobile:dev": "npm run dev --workspace=mobile",
+    "build": "npm run build --workspace=client && npm run build --workspace=server",
+    "test": "npm run test --workspaces",
+    "lint": "npm run lint --workspaces",
+    "install:all": "npm install && npm install --workspaces",
+    "clean": "npm run clean --workspaces",
+    "deploy": "./infrastructure/aws/deploy.sh"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "eslint": "^8.45.0",
+    "prettier": "^3.0.0"
+  },
+  "keywords": [
+    "food-expiry",
+    "react",
+    "react-native",
+    "nodejs",
+    "aws",
+    "gemini-api",
+    "food-tracker"
+  ],
+  "author": "Your Name",
+  "license": "MIT"
+}
